@@ -1,0 +1,123 @@
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+#surfsafe-modal {
+  /* display: none; */
+}
+
+/* Modal container */
+.modal {
+  backdrop-filter: blur(8px); /* Add backdrop filter for blur effect */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  position: fixed;
+  z-index: 1050; /* Ensure modal appears above other content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Center the modal vertically and horizontally */
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Modal content */
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  outline: 0;
+  width: 100%;
+  max-width: 500px; /* Adjust the max-width as needed */
+}
+
+/* Modal header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Modal title */
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Modal body */
+.modal-body {
+  padding: 1rem;
+}
+
+/* Modal footer */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Close button */
+.btn-close {
+  padding: 0.5rem 0.75rem;
+  margin: -0.5rem -0.75rem;
+}
+
+/* Close button hover */
+.btn-close:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Close button focus */
+.btn-close:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* Close button icon */
+.btn-close::before {
+  content: "×";
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #000;
+}
+
+/* Secondary button */
+.btn-secondary {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #6c757d;
+}
+
+/* Primary button */
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Primary button hover */
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* Primary button focus */
+.btn-primary:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.5);
+}
+

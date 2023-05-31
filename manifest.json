@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "SurfSafe",
+  "version": "1.0",
+  "description": "Description of extension",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "settings.html"
+  },
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}
+

@@ -1,14 +1,19 @@
-/* Modal backdrop */
-.modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+#ssm-parent {
+  /* display: none; */
+  font-family: arial, sans-serif;
+  color: white;
 }
 
-#surfsafe-modal {
-  /* display: none; */
+/* Center the modal vertically and horizontally */
+#ssm-parent .ssm-modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 /* Modal container */
-.modal {
+#ssm-parent .ssm-modal {
   backdrop-filter: blur(8px); /* Add backdrop filter for blur effect */
   -webkit-backdrop-filter: blur(8px); /* For Safari */
   position: fixed;
@@ -21,19 +26,12 @@
   overflow-y: auto;
 }
 
-/* Center the modal vertically and horizontally */
-.modal-dialog {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
 
 /* Modal content */
-.modal-content {
+#ssm-parent .ssm-modal-content {
   position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #212121;
+  border: 1px solid grey;
   border-radius: 0.25rem;
   outline: 0;
   width: 100%;
@@ -41,83 +39,96 @@
 }
 
 /* Modal header */
-.modal-header {
+#ssm-parent .ssm-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid grey;
 }
 
 /* Modal title */
-.modal-title {
+#ssm-parent .ssm-modal-title {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 /* Modal body */
-.modal-body {
+#ssm-parent .ssm-modal-body {
   padding: 1rem;
 }
 
 /* Modal footer */
-.modal-footer {
+#ssm-parent .ssm-modal-footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid grey;
 }
 
+#ssm-parent .ssm-btn {
+  line-height: 2;
+  font-weight: normal;
+  font-size: 1em;
+  padding: 0 1em;
+  border: 1px solid #babec9;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+}
+
+
 /* Close button */
-.btn-close {
+#ssm-parent .ssm-btn-close {
   padding: 0.5rem 0.75rem;
   margin: -0.5rem -0.75rem;
 }
 
 /* Close button hover */
-.btn-close:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+#ssm-parent .ssm-btn-close:hover {
+  background-color: white;
 }
 
 /* Close button focus */
-.btn-close:focus {
+#ssm-parent .ssm-btn-close:focus {
   outline: 0;
   box-shadow: none;
 }
 
 /* Close button icon */
-.btn-close::before {
+#ssm-parent .ssm-btn-close::before {
   content: "×";
   font-size: 1.5rem;
   line-height: 1;
-  color: #000;
+  color: white;
 }
 
 /* Secondary button */
-.btn-secondary {
-  color: #6c757d;
-  background-color: #fff;
-  border-color: #6c757d;
+#ssm-parent .ssm-btn-secondary {
+  color: #6FA4FF;
+  text-decoration-line: underline;
+  background: none;
+  border: none;
 }
 
 /* Primary button */
-.btn-primary {
+#ssm-parent .ssm-btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #6FA4FF;
+  border-color: #6FA4FF;
 }
 
 /* Primary button hover */
-.btn-primary:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+#ssm-parent .ssm-btn-primary:hover {
+  background-color: #6FA4FF;
+  border-color: #6FA4FF;
 }
 
 /* Primary button focus */
-.btn-primary:focus {
+#ssm-parent .ssm-btn-primary:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.5);
+  box-shadow: 0 0 0 0.25rem #6FA4FF;
 }
 

@@ -146,6 +146,11 @@ function openDetails() {
   closeBtnEl?.addEventListener("click", closeModal);
 }
 
+function closeWindow() {
+  window.close();
+  browser.runtime.sendMessage({ action: 'closeTab' });
+}
+
 window.addEventListener("DOMContentLoaded", function () {
   const host = document.location.host
 
@@ -168,7 +173,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Add event listener to the buttons
   const leaveBtnEl = document.getElementById("ssm-leave-button");
-  leaveBtnEl?.addEventListener("click", closeModal);
+  leaveBtnEl?.addEventListener("click", closeWindow);
 
   const detailsBtnEl = document.getElementById("ssm-details-button");
   detailsBtnEl?.addEventListener("click", openDetails);

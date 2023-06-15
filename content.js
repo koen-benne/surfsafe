@@ -9,19 +9,19 @@ const modal1HTML = `
       <h2 class="ssm-site-title" id="ssm-site-title"></h2>
       <div class="ssm-stars">
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#FF6F6F" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
       </div>
       <p class="ssm-site-status">This site does not seem safe enough. It is advised not to enter</p>
@@ -100,6 +100,7 @@ const detailsHTML = `
       <h1 class="ssm-modal-title" >SurfSafe</h1>
     </div>
     <div class="ssm-modal-body">
+      <p class="ssm-detail-title">Details</p>
       <div class="ssm-modal-detail-block">
         <div class="ssm-detail-graph-parent">
           <p class="ssm-detail-cat">Flashes</p>
@@ -144,6 +145,19 @@ function openDetails() {
   // Add new event listeners
   const closeBtnEl = document.getElementById("ssm-close-button");
   closeBtnEl?.addEventListener("click", closeModal);
+
+  const graphElements = document.getElementsByClassName("ssm-detail-graph")
+  for (const el of graphElements) {
+    const random = Math.floor(Math.random() * 60)
+    if (random < 20) {
+      el.style.backgroundColor = "#B7F0B1"
+    } else if (random < 40) {
+      el.style.backgroundColor = "#6FA4FF"
+    } else {
+      el.style.backgroundColor = "#FF6F6F"
+    }
+    el.style.width = `${random}%`
+  }
 }
 
 function closeWindow() {

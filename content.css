@@ -97,6 +97,7 @@
 }
 
 #ssm-parent .ssm-btn {
+  border: none;
   line-height: 2;
   font-weight: normal;
   font-size: 1.2em;

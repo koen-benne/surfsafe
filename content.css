@@ -2,6 +2,7 @@
   /* display: none; */
   font-family: arial, sans-serif;
   color: white;
+  line-height: 1rem;
 }
 
 /* Center the modal vertically and horizontally */
@@ -29,6 +30,7 @@
 
 /* Modal content */
 #ssm-parent .ssm-modal-content {
+  font-family: arial, sans-serif;
   position: relative;
   background-color: #212121;
   border: 1px solid grey;
@@ -38,40 +40,66 @@
   max-width: 500px; /* Adjust the max-width as needed */
 }
 
+/* Modal content */
+#ssm-parent .ssm-modal-content-detail {
+  position: relative;
+  background-color: #212121;
+  border: 1px solid grey;
+  border-radius: 0.25rem;
+  outline: 0;
+  width: 100%;
+  max-width: 700px; /* Adjust the max-width as needed */
+}
+
 /* Modal header */
 #ssm-parent .ssm-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.6rem 1.5rem;
   border-bottom: 1px solid grey;
 }
 
 /* Modal title */
 #ssm-parent .ssm-modal-title {
   margin: 0;
+  padding: 0;
   font-size: 1.25rem;
   font-weight: 600;
 }
 
 /* Modal body */
 #ssm-parent .ssm-modal-body {
-  padding: 1rem;
+  font-family: arial, sans-serif;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+#ssm-parent .ssm-site-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+#ssm-parent .ssm-site-status {
+  font-size: 1rem;
+  margin: 1rem 0;
 }
 
 /* Modal footer */
 #ssm-parent .ssm-modal-footer {
+  font-family: arial, sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 1rem;
-  border-top: 1px solid grey;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
 }
 
 #ssm-parent .ssm-btn {
   line-height: 2;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 0 1em;
   border: 1px solid #babec9;
   cursor: pointer;
@@ -117,18 +145,51 @@
 #ssm-parent .ssm-btn-primary {
   color: #fff;
   background-color: #6FA4FF;
-  border-color: #6FA4FF;
 }
 
 /* Primary button hover */
 #ssm-parent .ssm-btn-primary:hover {
   background-color: #6FA4FF;
-  border-color: #6FA4FF;
 }
 
 /* Primary button focus */
 #ssm-parent .ssm-btn-primary:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem #6FA4FF;
+  background-color: #95bcf9;
 }
 
+#ssm-parent .ssm-modal-detail-block {
+  padding: 15px 30px !important;
+  background-color: #2B2B2B;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+/* Graph stuff */
+#ssm-parent .ssm-detail-graph-parent {
+  margin: 10px 0 !important;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#ssm-parent .ssm-detail-graph {
+  height: 2rem;
+  border-radius: 0.25rem;
+  width: 50%;
+  background-color: #6FA4FF;
+}
+
+#ssm-parent .ssm-detail-cat {
+  font-size: 1rem;
+  margin-right: 1rem;
+  width: 12rem;
+}
+
+#ssm-parent .ssm-stars {
+}
+
+#ssm-parent .ssm-star {
+  /* background-color: #6FA4FF; */
+}

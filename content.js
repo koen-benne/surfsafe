@@ -1,3 +1,22 @@
+const modalBannedHTML = `
+<div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="ssm-modal-dialog">
+  <div class="ssm-modal-content">
+    <div class="ssm-modal-header">
+      <h1 class="ssm-modal-title" >SurfSafe</h1>
+    </div>
+    <div class="ssm-modal-body">
+      <h2 class="ssm-site-title" id="ssm-site-title"></h2>
+      <p class="ssm-site-status ssm-site-blacklist">This site is on the blacklist. It is advised not to enter.</p>
+    </div>
+    <div class="ssm-modal-footer">
+      <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
+    </div>
+  </div>
+</div>
+</div>
+`;
+
 const modal1HTML = `
 <div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="ssm-modal-dialog">
@@ -9,10 +28,10 @@ const modal1HTML = `
       <h2 class="ssm-site-title" id="ssm-site-title"></h2>
       <div class="ssm-stars">
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#FF6F6F" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
         <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
           <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
@@ -24,7 +43,7 @@ const modal1HTML = `
           <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
         </svg>
       </div>
-      <p class="ssm-site-status">This site does not seem safe enough. It is advised not to enter</p>
+      <p class="ssm-site-status">This site does not seem safe enough for you. It is advised not to enter</p>
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
@@ -44,28 +63,30 @@ const modal2HTML = `
     </div>
     <div class="ssm-modal-body">
       <h2 class="ssm-site-title" id="ssm-site-title"></h2>
-      <div class="ssm-stars">
-        <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
-        </svg>
-        <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
-        </svg>
-        <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
-        </svg>
-        <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
-        </svg>
-        <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-          <path fill="#6FA4FF" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
-        </svg>
-      </div>
-      <p class="ssm-site-status">This site does not seem safe enough. It is advised not to enter</p>
+      <p class="ssm-site-status">This site is unknown.</p>
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-      <button type="button" id="ssm-details-button" class="ssm-btn ssm-btn-secondary">Details</button>
+      <button type="button" id="ssm-checker-button" class="ssm-btn ssm-btn-primary">Enter with live check</button>
+    </div>
+  </div>
+</div>
+</div>
+`;
+
+const modalCheckerHTML = `
+<div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="ssm-modal-dialog">
+  <div class="ssm-modal-content">
+    <div class="ssm-modal-header">
+      <h1 class="ssm-modal-title" >SurfSafe</h1>
+    </div>
+    <div class="ssm-modal-body">
+      <h2 class="ssm-site-title" id="ssm-site-title"></h2>
+      <p class="ssm-site-status">Checker has concluded that this site is not safe</p>
+    </div>
+    <div class="ssm-modal-footer">
+      <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
     </div>
   </div>
 </div>
@@ -115,7 +136,7 @@ const detailsHTML = `
           <div class="ssm-detail-graph"></div>
         </div>
         <div class="ssm-detail-graph-parent">
-          <p class="ssm-detail-cat">Hight luminance</p>
+          <p class="ssm-detail-cat">High luminance</p>
           <div class="ssm-detail-graph"></div>
         </div>
       </div>
@@ -123,6 +144,25 @@ const detailsHTML = `
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
       <button type="button" id="ssm-close-button" class="ssm-btn ssm-btn-secondary">Enter page</button>
+    </div>
+  </div>
+</div>
+</div>
+`;
+
+const detectedHTML = `
+<div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="ssm-modal-dialog">
+  <div class="ssm-modal-content">
+    <div class="ssm-modal-header">
+      <h1 class="ssm-modal-title" >SurfSafe</h1>
+    </div>
+    <div class="ssm-modal-body">
+      <h2 class="ssm-site-title" id="ssm-site-title"></h2>
+      <p class="ssm-site-status">Issues have been detected with this site. It does not seem safe.</p>
+    </div>
+    <div class="ssm-modal-footer">
+      <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
     </div>
   </div>
 </div>
@@ -139,6 +179,14 @@ function openModal() {
   ssmParent.style.display = "block";
 }
 
+function openDetected() {
+  ssmParent.innerHTML = detectedHTML;
+  ssmParent.style.display = "block";
+
+  const leaveBtnEl = document.getElementById("ssm-leave-button");
+  leaveBtnEl?.addEventListener("click", closeWindow);
+}
+
 function openDetails() {
   ssmParent.innerHTML = detailsHTML;
 
@@ -148,7 +196,7 @@ function openDetails() {
 
   const graphElements = document.getElementsByClassName("ssm-detail-graph")
   for (const el of graphElements) {
-    const random = Math.floor(Math.random() * 60)
+    const random = Math.floor(Math.random() * 20 + 30)
     if (random < 20) {
       el.style.backgroundColor = "#B7F0B1"
     } else if (random < 40) {
@@ -161,9 +209,15 @@ function openDetails() {
 }
 
 function closeWindow() {
-  window.close();
   browser.runtime.sendMessage({ action: 'closeTab' });
 }
+
+browser.runtime.onMessage.addListener(function(message) {
+  // Handle the received message
+  if (message.action === 'flashDetected') {
+    openDetected();
+  }
+});
 
 window.addEventListener("DOMContentLoaded", function () {
   const host = document.location.host
@@ -178,6 +232,8 @@ window.addEventListener("DOMContentLoaded", function () {
     ssmParent.innerHTML = modal2HTML;
   } else if (host === "www.qwant.com") {
     ssmParent.innerHTML = modal3HTML;
+  } else if (host === "www.yahoo.com") {
+    ssmParent.innerHTML = modalBannedHTML;
   } else {
     return;
   }
@@ -191,5 +247,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const detailsBtnEl = document.getElementById("ssm-details-button");
   detailsBtnEl?.addEventListener("click", openDetails);
+
+  const checkerBtnEl = document.getElementById("ssm-checker-button");
+  checkerBtnEl?.addEventListener("click", startChecker);
 });
+
+async function startChecker() {
+  closeModal();
+  browser.runtime.sendMessage({ action: 'startChecker' });
+}
 

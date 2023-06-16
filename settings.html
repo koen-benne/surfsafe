@@ -1,43 +1,52 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Extension Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <script src="settings.js"></script>
   </head>
   <body>
-    <div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="ssm-modal-dialog">
-      <div class="ssm-modal-content">
-        <div class="ssm-modal-header">
-          <h1 class="ssm-modal-title" >SurfSafe</h1>
+      <div id="content">
+        <div class="header">
+          <h1 class="title" >SurfSafe</h1>
         </div>
-        <div class="ssm-modal-body">
-          <h2 class="ssm-site-title" id="ssm-site-title"></h2>
-          <div class="ssm-stars">
-            <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-              <path fill="#FF6F6F" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+        <div id="body">
+          <h2 class="site-title" id="site-title"></h2>
+          <div class="stars">
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+              <path fill="#B7F0B1" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
             </svg>
-            <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-              <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+              <path fill="#B7F0B1" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
             </svg>
-            <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-              <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+              <path fill="#B7F0B1" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
             </svg>
-            <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-              <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+              <path fill="#B7F0B1" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
             </svg>
-            <svg class="ssm-star" xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24">
-              <path fill="#4A4A4A" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+              <path fill="#B7F0B1" d="M12 1.25l2.589 7.965h8.387l-6.797 4.949 2.589 7.965-6.797-4.949-6.797 4.949 2.589-7.965-6.797-4.949h8.387z"/>
             </svg>
           </div>
-          <p class="ssm-site-status">This site does not seem safe enough. It is advised not to enter</p>
+          <div id="verified">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1DA1F2" width="24px" height="24px">
+            <circle cx="12" cy="12" r="11" fill="#1DA1F2"/>
+            <path d="M8.5 13.5l2 2 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p class="site-status">We have confirmed that this site is safe to use</p>
+          </div>
         </div>
-        <div class="ssm-modal-footer">
-          <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-          <button type="button" id="ssm-details-button" class="ssm-btn ssm-btn-secondary">Details</button>
+        <div id="footer">
+          <a type="button" id="settings-button" class="btn btn-secondary"><i class="arrow arrow-down"></i>Settings</button>
+          <div id="settings">
+            <p>Settings</p>
+            <p>Settings</p>
+            <p>Settings</p>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    <!-- Add your settings UI components here -->
   </body>
 </html>
 

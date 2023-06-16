@@ -15,8 +15,9 @@
 
 /* Modal container */
 #ssm-parent .ssm-modal {
-  backdrop-filter: blur(8px); /* Add backdrop filter for blur effect */
-  -webkit-backdrop-filter: blur(8px); /* For Safari */
+  backdrop-filter: blur(20px); /* Add backdrop filter for blur effect */
+  -webkit-backdrop-filter: blur(20px); /* For Safari */
+  background-color: rgba(0, 0, 0, 0.95);
   position: fixed;
   z-index: 1050; /* Ensure modal appears above other content */
   top: 0;
@@ -86,6 +87,11 @@
 #ssm-parent .ssm-site-status {
   font-size: 1rem;
   margin: 2rem 0 0 0;
+}
+
+#ssm-parent .ssm-site-blacklist {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 /* Modal footer */

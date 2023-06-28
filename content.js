@@ -1,22 +1,3 @@
-const modalBannedHTML = `
-<div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="ssm-modal-dialog">
-  <div class="ssm-modal-content">
-    <div class="ssm-modal-header">
-      <h1 class="ssm-modal-title" >SurfSafe</h1>
-    </div>
-    <div class="ssm-modal-body">
-      <h2 class="ssm-site-title" id="ssm-site-title"></h2>
-      <p class="ssm-site-status ssm-site-blacklist">This site is on the blacklist. It is advised not to enter.</p>
-    </div>
-    <div class="ssm-modal-footer">
-      <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-    </div>
-  </div>
-</div>
-</div>
-`;
-
 const modal1HTML = `
 <div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="ssm-modal-dialog">
@@ -47,6 +28,7 @@ const modal1HTML = `
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
+      <button type="button" id="ssm-checker-button" class="ssm-btn ssm-btn-secondary">Enter with live check</button>
       <button type="button" id="ssm-details-button" class="ssm-btn ssm-btn-secondary">Details</button>
     </div>
   </div>
@@ -63,7 +45,7 @@ const modal2HTML = `
     </div>
     <div class="ssm-modal-body">
       <h2 class="ssm-site-title" id="ssm-site-title"></h2>
-      <p class="ssm-site-status">This site is unknown.</p>
+      <p class="ssm-site-status">This site is not in our database.</p>
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
@@ -87,26 +69,6 @@ const modalCheckerHTML = `
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-    </div>
-  </div>
-</div>
-</div>
-`;
-
-const modal3HTML = `
-<div class="ssm-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="ssm-modal-dialog">
-  <div class="ssm-modal-content">
-    <div class="ssm-modal-header">
-      <h1 class="ssm-modal-title" >SurfSafe</h1>
-    </div>
-    <div class="ssm-modal-body">
-      <h2 class="ssm-site-title" id="ssm-site-title"></h2>
-      <p class="ssm-site-status">This site is not known to our database. Entering could be unsafe. If you decide to enter, please report the site if it does not seem safe to you.</p>
-    </div>
-    <div class="ssm-modal-footer">
-      <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-      <button type="button" id="ssm-details-button" class="ssm-btn ssm-btn-secondary">Details</button>
     </div>
   </div>
 </div>
@@ -143,7 +105,7 @@ const detailsHTML = `
     </div>
     <div class="ssm-modal-footer">
       <button type="button" id="ssm-leave-button" class="ssm-btn ssm-btn-primary">Leave page</button>
-      <button type="button" id="ssm-close-button" class="ssm-btn ssm-btn-secondary">Enter page</button>
+      <button type="button" id="ssm-checker-button" class="ssm-btn ssm-btn-secondary">Enter with live check</button>
     </div>
   </div>
 </div>
@@ -190,9 +152,9 @@ function openDetected() {
 function openDetails() {
   ssmParent.innerHTML = detailsHTML;
 
-  // Add new event listeners
-  const closeBtnEl = document.getElementById("ssm-close-button");
-  closeBtnEl?.addEventListener("click", closeModal);
+  const checkerBtnEl = document.getElementById("ssm-checker-button");
+  checkerBtnEl?.addEventListener("click", closeModal);
+  checkerBtnEl?.addEventListener("click", startChecker);
 
   const graphElements = document.getElementsByClassName("ssm-detail-graph")
   for (const el of graphElements) {
@@ -230,10 +192,8 @@ window.addEventListener("DOMContentLoaded", function () {
     ssmParent.innerHTML = modal1HTML;
   } else if (host === "duckduckgo.com") {
     ssmParent.innerHTML = modal2HTML;
-  } else if (host === "www.qwant.com") {
-    ssmParent.innerHTML = modal3HTML;
-  } else if (host === "www.yahoo.com") {
-    ssmParent.innerHTML = modalBannedHTML;
+  } else if (host === "www.youtube.com") {
+    ssmParent.innerHTML = modal2HTML;
   } else {
     return;
   }

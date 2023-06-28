@@ -54,7 +54,7 @@ async function startChecker() {
           const averageBrightnessDiff = totalBrightnessDiff / pixelCount;
 
           // You can set a threshold value to determine if there's a flash
-          const threshold = 50;
+          const threshold = 100;
           if (averageBrightnessDiff > threshold) {
             console.log('Flash detected!');
             sendMessageToContentScript({ action: 'flashDetected' });
@@ -66,7 +66,7 @@ async function startChecker() {
         previousFrameData = currentFrameData;
 
         // Call the captureFrame function again in the next frame
-        setTimeout(captureFrame, 200);
+        setTimeout(captureFrame, 100);
       };
 
       // Load the captured image

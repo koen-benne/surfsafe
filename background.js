@@ -58,6 +58,7 @@ async function startChecker() {
           if (averageBrightnessDiff > threshold) {
             console.log('Flash detected!');
             sendMessageToContentScript({ action: 'flashDetected' });
+            return
           }
         }
 
@@ -65,7 +66,7 @@ async function startChecker() {
         previousFrameData = currentFrameData;
 
         // Call the captureFrame function again in the next frame
-        requestAnimationFrame(captureFrame);
+        setTimeout(captureFrame, 200);
       };
 
       // Load the captured image
@@ -74,7 +75,7 @@ async function startChecker() {
   }
 
   // Start capturing frames
-  setTimeout(captureFrame, 500);
+  captureFrame()
 }
 
 function sendMessageToContentScript(message) {
